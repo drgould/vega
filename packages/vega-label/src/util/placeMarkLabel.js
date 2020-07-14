@@ -29,7 +29,7 @@ export default function($, bitmaps, anchors, offsets) {
       dx = (anchors[i] & 0x3) - 1;
       dy = ((anchors[i] >>> 0x2) & 0x3) - 1;
 
-      isInside = (dx === 0 && dy === 0) || offsets[i] < 0;
+      isInside = bm1 && ((dx === 0 && dy === 0) || offsets[i] < 0);
       sizeFactor = dx && dy ? Math.SQRT1_2 : 1;
       insideFactor = offsets[i] < 0 ? -1 : 1;
 
